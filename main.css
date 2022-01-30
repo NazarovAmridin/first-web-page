@@ -1,0 +1,173 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #383838;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+.header {
+    width: 100%;
+    padding: 15px 0;
+
+    text-align: center;
+    font-style: 24px;
+    font-weight: 300;
+    color: gray;
+}
+
+.header__logo {
+    color: inherit;
+    text-decoration: none;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #969696;
+}
+
+.container {
+    max-width: 1230px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px
+}
+
+.hero__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    grid-gap: 20px;
+}
+
+.hero__about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero__title {
+    margin-bottom: 20px;
+
+    font-size: 48px;
+    line-height: 1.1;
+}
+
+.her__subtitle {
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.hero__links {
+    display: flex;
+}
+
+.hero__link {
+    margin-right: 10px;
+    font-size: 30px;
+    color: #000;
+    transition: color 0.3;
+}
+
+.hero__link:hover {
+    color: #4facfe;
+}
+
+.hero__box {
+    max-width: 400px;
+    justify-self: center;
+    overflow: hidden;
+
+    border: 10px solid #fff;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+    
+    background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);
+    animation: ava-animate 5s infinite alternate;
+}
+
+.hero__box-img {
+    animation: ava-bg 3s infinite alternate;
+}
+
+@media screen and (max-width: 978px) {
+    .hero {
+        padding-top: 30px;
+    }
+
+    .hero__container {
+        grid-row-gap: 20px;
+    }
+
+    .hero__title {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+    
+    .hero__subtitle {
+        font-size: 22px;
+        font-weight: 400;
+    }
+
+    .hero__description {
+        font-size: 14px;
+    }
+
+    .hero__about {
+        text-align: center;
+    }
+
+    .hero__links {
+        justify-content: center;
+    }
+
+    .hero__box {
+        max-width: 350px;
+    }
+}
+
+@keyframes ava-animate {
+    0% {
+        border-radius: 32% 68% 70% 30% / 30% 51% 49% 70%;
+    }
+
+    40% {
+        border-radius: 71% 29% 19% 81% / 41% 98% 2% 59%;
+    }
+
+    60% {
+        border-radius: 71% 29% 38% 62% / 70% 22% 78% 30%;
+    }
+
+    80% {
+        border-radius: 18% 82% 84% 16% / 17% 82% 18% 83%;
+    }
+
+    100% {
+        border-radius: 30% 70% 100% 0% / 70% 22% 78% 30%;
+    }
+}
+
+@keyframes ava-bg {
+    from {
+        backdrop-filter: hue-rotate(0);
+    }
+
+    to {
+        backdrop-filter: hue-rotate(100deg);
+    }
+}
